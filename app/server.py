@@ -4,7 +4,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def student():
-   return render_template('main.html')
+   return render_template('user_info.html')
+
+@app.route('/submit', methods = ['POST', 'GET'])
+def submit():
+   name=request.form.get('name')
+   address=request.form.get('address')
+   card=request.form.get('card')
+   return render_template("submit.html",name=name, address=address, card=card)
 
 @app.route('/detail', methods = ['POST', 'GET'])
 def detail():

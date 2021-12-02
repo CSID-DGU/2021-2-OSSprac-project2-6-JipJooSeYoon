@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJSY-Express User Info</title>
+</head>
+<h1>배송지 및 결제정보 등록</h1>
+<body>
+    <form action = "/submit" method = "POST">
+    이름: <input type = "text" name = "name" value=""><br>
+    성별: 
+    <input type="radio" name="gender" value="남">남
+    <input type="radio" name="gender" value="여">여<br>
+    주소: <input type = "text" name = "address" value=""><br>
+    카드 종류: <select name="card">
+        <option value="신한">신한</option>
+        <option value="농협">농협</option>
+        <option value="우리">우리</option>
+        <option value="기업">기업</option>
+        <option value="국민">국민</option>
+        <option value="하나">하나</option>
+        <option value="롯데">롯데</option>
+        <option value="현대">현대</option>
+        <option value="삼성">삼성</option>
+        <option value="카카오">카카오</option>
+        <option value="SC">SC</option>
+    </select><br>
+    카드번호: 
+    <input type = "text" name = "cardNumber1" value="" maxlength="4" size="2">
+    <input type = "text" name = "cardNumber2" value="" maxlength="4" size="2">
+    <input type = "text" name = "cardNumber3" value="" maxlength="4" size="2">
+    <input type = "text" name = "cardNumber4" value="" maxlength="4" size="2"><br>
+
+    <input type = "submit" value = "주문">
+    </form>
+    
+</body>
+</html>
