@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+   <body>
+   
+      <form action = "/result" method = "POST">
+         
+         {% for key, value in detail.items() %}
+                     <input type="hidden" id= {{ key }} name= {{ key }} value= {{ value }}>
+                  {% endfor %}
+
+         <p>소속 단과대</p>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="불교대학" checked="checked"/>불교대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="문과대학"/>문과대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="이과대학"/>이과대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="법과대학"/>법과대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="사회과학대학"/>사회과학대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="경찰사법대학"/>경찰사법대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="경영대학"/>경영대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="바이오시스템대학"/>바이오시스템대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="공과대학"/>공과대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="사범대학"/>사범대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="예술대학"/>예술대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="약학대학"/>약학대학</label>
+            <label><input type="radio" style="vertical-align: top;" name="College" value="미래융합대학"/>미래융합대학</label>
+
+         <p>장학금 퍼센티지 <input type = "text" name = "Scholarship" value="0"/></p>
+
+         <p><input type = "submit" value = "SUBMIT" /></p>
+      </form>
+      
+   </body>
+</html>
