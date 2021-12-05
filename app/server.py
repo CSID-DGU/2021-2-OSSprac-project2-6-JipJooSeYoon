@@ -3,8 +3,18 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 @app.route('/')
-def student():
-   return render_template('user_info.html')
+def mainpage():
+   return render_template("main.html")
+
+@app.route('/login', methods = ['POST', 'GET'])
+def login():
+   error = None
+   if request.method == 'POST':
+      if request.form['username'] != 'ossp' or request.form['password'] != 'ossp1234':
+         error = '아이디 또는 비밀번호가 올바르지 않습니다. 다시 입력해 주십시오'
+      else:
+         return render_template("select.html")
+   return render_template("login.html", error = error)
 
 @app.route('/submit', methods = ['POST', 'GET'])
 def submit():
