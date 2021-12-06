@@ -19,10 +19,11 @@ def login():
 @app.route('/submit', methods = ['POST', 'GET'])
 def submit():
    book = request.form.get('book')
+   book_len = request.form.get('book_len')
    name=request.form.get('name')
    address=request.form.get('address')
    card=request.form.get('card')
-   return render_template("submit.html",book=book,name=name, address=address, card=card)
+   return render_template("submit.html",book=book,name=name, address=address, card=card,book_len=book_len)
 
 @app.route('/user_info', methods = ['POST', 'GET'])
 def user_info():
@@ -35,9 +36,12 @@ def user_info():
       elif(book in ['book4']): cost = 14400
       elif(book in ['book7']): cost = 14800
 
+      book_list = request.form.getlist('book')
+      book_len = len(book_list)
+
       book_title = books[book]
 
-      return render_template("user_info.html", cost=cost,book_title = book_title)
+      return render_template("user_info.html", cost=cost,book_title = book_title,book_len = book_len)
 
 @app.route('/select')
 def select_book():
