@@ -29,19 +29,13 @@ def submit():
 def user_info():
    if request.method == 'POST':
       book = request.form.get('book')
-      if(book in ['book5', 'book6']): cost = 17000
-      elif(book in ['book1']): cost = 15000
-      elif(book in ['book2']): cost = 14000
-      elif(book in ['book3']): cost = 15500
-      elif(book in ['book4']): cost = 14400
-      elif(book in ['book7']): cost = 14800
 
       book_list = request.form.getlist('book')
       book_len = len(book_list)
 
       book_title = books[book]
 
-      return render_template("user_info.html", cost=cost,book_title = book_title,book_len = book_len)
+      return render_template("user_info.html", book_title = book_title,book_len = book_len)
 
 @app.route('/select')
 def select_book():
